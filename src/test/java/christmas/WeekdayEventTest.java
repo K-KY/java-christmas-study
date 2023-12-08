@@ -2,10 +2,8 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import christmas.domain.WeekdayEvent;
-import christmas.domain.menu.MenuBoard;
-import java.util.HashMap;
-import java.util.List;
+import christmas.domain.MenuReceiver;
+import christmas.domain.event.WeekdayEvent;
 import org.junit.jupiter.api.Test;
 
 public class WeekdayEventTest {
@@ -13,10 +11,7 @@ public class WeekdayEventTest {
     @Test
     void discountTest() {
         WeekdayEvent weekdayEvent =  new WeekdayEvent();
-        HashMap<MenuBoard, Integer> desertMenu = new HashMap<>();
-        desertMenu.put(MenuBoard.orderMenu("초코케이크"), 3);
-        desertMenu.put(MenuBoard.orderMenu("아이스크림"), 3);
 
-        assertThat(weekdayEvent.discount(desertMenu)).isEqualTo(12138);
+        assertThat(weekdayEvent.discount(MenuReceiver.receive("초코케이크-3,아이스크림-3"))).isEqualTo(12138);
     }
 }
