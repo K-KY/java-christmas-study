@@ -46,7 +46,7 @@ public enum MenuBoard {
         return menuBoards.stream()
                 .filter(menuBoard -> menuBoard.menuName.equals(menuName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 매뉴입니다."));
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요."));
     }
 
     public boolean isMain(MenuBoard menuBoard) {
@@ -57,7 +57,14 @@ public enum MenuBoard {
         return this.menuCategory.equals("DESSERT");
     }
 
+    public boolean isBeverage() {
+        return this.menuCategory.equals("BEVERAGE");
+    }
+
     public int getMenuPrice() {
         return this.menuPrice;
+    }
+    public String getMenuName() {
+        return this.menuName;
     }
 }

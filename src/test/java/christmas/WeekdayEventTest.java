@@ -11,7 +11,7 @@ public class WeekdayEventTest {
     @Test
     void discountTest() {
         WeekdayEvent weekdayEvent =  new WeekdayEvent();
-
-        assertThat(weekdayEvent.discount(MenuReceiver.receive("초코케이크-3,아이스크림-3"))).isEqualTo(12138);
+        Date date = new Date(26);
+        assertThat(weekdayEvent.discount(MenuReceiver.receive("초코케이크-3,아이스크림-3"), date)).isEqualTo(12138);
     }
 }

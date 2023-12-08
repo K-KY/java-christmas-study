@@ -10,7 +10,7 @@ public enum ChristmasBadge {
     SANTA("산타", 20_000),
     TREE("트리", 10_000),
     STAR("별", 5_000),
-    NO_BADGE("NO_BADGE", 0);
+    NO_BADGE("없음", 0);
 
     private String badgeName;
     private int badgeCondition;
@@ -25,5 +25,9 @@ public enum ChristmasBadge {
         return christmasBadges.stream()
                 .filter(badge -> badge.badgeCondition <= benefit)
                 .findFirst().orElse(SANTA);
+    }
+
+    public String getBadgeName() {
+        return this.badgeName;
     }
 }

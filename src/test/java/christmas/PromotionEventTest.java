@@ -10,7 +10,6 @@ public class PromotionEventTest {
     @Test
     void discountTest() {
         PromotionEvent promotionEvent = new PromotionEvent();
-        assertThat(promotionEvent.discount(120000)).isEqualTo(25000);
-        assertThat(promotionEvent.discount(110000)).isEqualTo(0);
+        assertThat(promotionEvent.discount()).isEqualTo(25000);
     }
 }
