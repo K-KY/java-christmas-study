@@ -56,4 +56,8 @@ public enum MenuBoard {
     public boolean isDessert(MenuBoard menuBoard) {
         return this.menuCategory.equals("DESSERT");
     }
+
+    public int getMenuPrice() {
+        return this.menuPrice;
+    }
 }
