@@ -26,4 +26,13 @@ public enum Week {
                 .filter(week -> week.day.equals(day))
                 .findFirst().orElse(null)).weekend;
     }
+
+    private static boolean isSunday(Date date) {
+        String orderedDate = date.orderedDate();
+        return SUNDAY.day.equals(orderedDate);
+    }
+    public static boolean isStared(Date date) {
+        return date.christmasDay() || isSunday(date);
+    }
+
 }
