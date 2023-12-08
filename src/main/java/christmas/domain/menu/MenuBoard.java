@@ -48,4 +48,12 @@ public enum MenuBoard {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 매뉴입니다."));
     }
+
+    public boolean isMain(MenuBoard menuBoard) {
+        return this.menuCategory.equals("MAIN");
+    }
+
+    public boolean isDessert(MenuBoard menuBoard) {
+        return this.menuCategory.equals("DESSERT");
+    }
 }
