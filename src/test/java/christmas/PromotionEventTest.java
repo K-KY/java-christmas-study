@@ -2,7 +2,7 @@ package christmas;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import christmas.domain.PromotionEvent;
+import christmas.domain.event.PromotionEvent;
 import org.junit.jupiter.api.Test;
 
 public class PromotionEventTest {
