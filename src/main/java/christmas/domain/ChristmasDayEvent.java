@@ -2,7 +2,7 @@ package christmas.domain;
 
 import christmas.Date;
 
-public class SpecialEvent {
+public class ChristmasDayEvent {
 
     public int discount(Date date) {
         if (date.isBeforeChristmas()) {
