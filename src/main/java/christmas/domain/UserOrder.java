@@ -38,4 +38,8 @@ public class UserOrder {
         }
     }
 
+    public int totalAmount() {
+        return userOrder.keySet().stream().mapToInt(MenuBoard::getMenuPrice).sum();
+    }
+
 }
