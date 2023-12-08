@@ -47,4 +47,8 @@ public class Date {
     public boolean isWeekend() {
         return Week.isWeekend(orderedDate());
     }
+
+    public boolean isStared() {
+        return Week.isStared(this);
+    }
 }
