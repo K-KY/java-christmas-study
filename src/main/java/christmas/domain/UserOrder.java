@@ -42,4 +42,25 @@ public class UserOrder {
         return userOrder.keySet().stream().mapToInt(MenuBoard::getMenuPrice).sum();
     }
 
+    public int getDessertCount() {
+        List<MenuBoard> dessertMenus =  userOrder.keySet()
+                .stream()
+                .filter(menuBoard -> menuBoard.isDessert(menuBoard))
+                .toList();
+        return dessertMenus.stream()
+                .mapToInt(userOrder::get).sum();
+    }
+
+    public int getMainCount() {
+        List<MenuBoard> mainMenus = userOrder.keySet()
+                .stream()
+                .filter(menuBoard -> menuBoard.isMain(menuBoard))
+                .toList();
+        return mainMenus.stream()
+                .mapToInt(userOrder::get).sum();
+
+    }
+
+
+
 }
